@@ -3,7 +3,7 @@
   gap: 32px;
   background-color: #121212;
   color: #ffffff;
-  height: 100vh;
+  height: 110%;
 }
 
 .body__container {
@@ -24,7 +24,6 @@
 .body__container-songsList-header {
   display: flex;
   width: 100%;
-  justify-content: space-between;
   align-items: center;
   padding: 32px 24px 0px 0px;
   color: #b3b3b3;
@@ -37,6 +36,22 @@
 }
 
 .fixed-width-header {
-  display: flex;
-  width: 20px;
+  width: 3%;
+}
+
+.songsList-header-title {
+  width: 45%;
+  padding-left: 12px;
+}
+
+.songsList-header-album {
+  width: 25%;
+}
+
+.songsList-header-dateAdded {
+  width: 15%;
+}
+
+.songsList-header-duration {
+  width: 12%;
 }

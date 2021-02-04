@@ -6,10 +6,10 @@ export const initialState = {
     playlists: [],
     discover_weekly: [],
     featured_playlist: [],
+    selected_playlist: "",
+    tracks: [],
     playing: false,
     item: null,
-    // Disable token defualt on production, this only helps us so we do not have to login all the time.
-    // token: "BQCe5CHQsT7Tir91h72LaHEMtbiV6Yu6UrJOdNUlfVbq6Umu8f-SNqjGS0GSZNu3k8v5ihxRY4raUmvRR5Pw1QFt0UYT0a57wvRrpCAa3TrBgKLCF21TQ8Ws3O5OOxdWk8yR0leanVUlUnsEJgWYNNchY3ROgEeqQdh7Wtm-YWFiJxRe2SjfiF14Vqhe_lU"
 };
 
 // Set Up Reducer that will listen to action and perform the necessary.
@@ -43,6 +43,16 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 featured_playlist: action.featured_playlist, 
+            }
+        case 'SET_SELECTED_PLAYLIST':
+            return {
+                ...state,
+                selected_playlist: action.selected_playlist, 
+            }
+        case 'SET_TRACKS':
+            return {
+                ...state,
+                tracks: action.tracks, 
             }
         default: 
             return state; //Return current state if no action is performed by the reducer.

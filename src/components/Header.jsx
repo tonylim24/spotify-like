@@ -4,7 +4,7 @@ import TopNav from './TopNav';
 import { useDataLayerValue } from './DataLayer';
 import FeaturedPlaylist from './FeaturedPlaylist';
 
-function Header({ spotify }) {
+function Header() {
     // const[{ discover_weekly }, dispatch] = useDataLayerValue();
     const[{ featured_playlist }] = useDataLayerValue();
 
@@ -15,8 +15,8 @@ function Header({ spotify }) {
                 <h1>Good afternoon</h1>
             </div>
             <div className="header__block-container">
-                {featured_playlist.playlists?.items?.map((playlist) => (
-                    <FeaturedPlaylist playlist={playlist} />
+                {featured_playlist.playlists?.items?.map((playlist, index) => (
+                    <FeaturedPlaylist playlist={playlist} index={index} />
                 ))}
 
                 {/* <a href={featured_playlist?.playlists?.items[0]?.external_urls?.spotify}>

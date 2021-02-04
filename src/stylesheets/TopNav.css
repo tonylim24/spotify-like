@@ -21,5 +21,10 @@
 .topNav__right > h4 {
   color: white;
   font-size: 14px;
-  margin-left: 5px;
+  margin: 0 12px;
+}
+
+.topNav__right > .MuiSvgIcon-root {
+  color: #ffffff;
+  font-size: larger;
 }

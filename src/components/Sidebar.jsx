@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../stylesheets/Sidebar.css';
 import spotifyLogo from '../images/Spotify_Logo_RGB_White.png';
 import SidebarOption from './SidebarOption';
@@ -8,7 +8,23 @@ import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import { useDataLayerValue } from "./DataLayer";
 
 function Sidebar() {
-    const[{ playlists }] = useDataLayerValue();
+    const[{ playlists }, dispatch] = useDataLayerValue();
+
+    useEffect(() => {
+        window.addEventListener('hashchange', function(){
+            if(window.location.hash.includes("selectedPlaylistId")) {
+                // Grab the #selectedPlaylistId value
+                // Note that #selectedPlaylistId= is 20 characters long.
+                let selectedPlaylistId = window.location.hash.substr(20);
+                dispatch({
+                    type: 'SET_SELECTED_PLAYLIST',
+                    selected_playlist: selectedPlaylistId,
+                });
+            }
+        });
+    }, [])
+
+
 
     return (
         <div className="sidebar">
@@ -23,7 +39,9 @@ function Sidebar() {
             <hr/>
 
             {playlists?.items?.map((playlist) => (
-                <SidebarOption title={playlist.name} />
+                <a href={`#selectedPlaylistId=${playlist.id}`}>
+                    <SidebarOption title={playlist.name} />
+                </a>
             ))}
         </div>
     );

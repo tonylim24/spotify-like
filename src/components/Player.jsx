@@ -5,14 +5,14 @@ import Header from './Header';
 import PlayerController from './PlayerController';
 import Sidebar from "./Sidebar";
 
-function Player(spotify) {
+function Player() {
     return (
         <div className="player">
             <div className="player__container">
                 <Sidebar />
                 <div className="player__main">
-                    <Header spotify={spotify} />
-                    <Body playlist={spotify} />
+                    <Header />
+                    <Body />
                 </div>
             </div>
 

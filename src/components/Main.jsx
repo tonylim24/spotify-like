@@ -11,7 +11,7 @@ const spotify = new SpotifyWebApi();
 function Main() {
     // const [token, setToken] = useState(null);
     // Using the DataLayer here. We need a dispatch here to pop into the DataLayer
-    const[{user, token}, dispatch] = useDataLayerValue();
+    const[{token, selected_playlist}, dispatch] = useDataLayerValue();
 
     // Get the token from URL from Spotify API
     useEffect(() => {
@@ -45,13 +45,6 @@ function Main() {
                 });
             });
 
-            // spotify.getPlaylist('37i9dQZEVXcUy70N6IQ2Tt').then((discover_weekly_playlist) => {
-            //     dispatch({
-            //         type: 'SET_DISCOVER_WEEKLY',
-            //         discover_weekly: discover_weekly_playlist,
-            //     });
-            // });
-
             const getFeaturedPlaylistsOptions = {
                 "limit": 6,
             }
@@ -63,10 +56,18 @@ function Main() {
                 });
             });
 
+            spotify.getPlaylistTracks(selected_playlist, {"limit": 20})
+                .then((tracks) => {
+                    dispatch({
+                        type: 'SET_TRACKS',
+                        tracks: tracks,
+                    });
+                }).catch(error => console.log(error));
+
+
             // console.log(spotify);
-            // console.log(spotify.getFeaturedPlaylists());
         }
-    }, []);
+    },);
 
     // console.log('token:', token);
 
