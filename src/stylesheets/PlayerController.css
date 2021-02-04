@@ -1,0 +1,80 @@
+.playerController {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  height: 50px;
+  width: 97%;
+  border-top: 1px solid #282828;
+  background-color: #181818;
+  color: #b3b3b3;
+  padding: 20px;
+}
+
+.playerController__now-playing {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  max-width: 300px;
+}
+
+.now-playing-information {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.now-playing-albumImg {
+  width: 56px;
+  height: 56px;
+}
+
+.now-playing-information > h4 {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 0.135em;
+}
+
+.now-playing-information > p {
+  color: #b3b3b3;
+  font-size: 12px;
+  padding-top: 0.135em;
+}
+
+.playerController__player-controls-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 0 100px;
+  max-width: 300px;
+}
+
+.player-controls-container__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b3b3b3;
+}
+
+.playerController__extra-controls {
+  display: flex;
+  width: 30%;
+  color: #b3b3b3;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+}
+
+.extra-controls-playListIcon:hover {
+  color: white;
+}
+
+.extra-controls-volumeDownIcon:hover {
+  color: white;
+}
+
+/* Stylizing Material UI (Mui) */
+.playerController__extra-controls * .MuiSlider-root {
+  color: #b3b3b3;
+}

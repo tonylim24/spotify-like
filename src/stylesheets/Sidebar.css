@@ -1,0 +1,34 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  height: 120vh;
+  width: 221px;
+  background-color: #000000;
+  color: #fff;
+  padding: 24px;
+}
+
+.sidebar__logo {
+  width: 131px;
+  height: 40px;
+  padding-bottom: 18px;
+}
+
+.sidebar__navigation {
+  padding: 16px 8px 16px 8px;
+}
+
+.sidebar__title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sidebar > hr {
+  border: 1px solid #282828;
+  width: 100%;
+  margin: 10px auto;
+}

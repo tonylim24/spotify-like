@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(208, 32, 64);
+  height: 332px;
+  width: 100%;
+  justify-content: left;
+  align-items: flex-start;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), #121212);
+}
+
+.header__intro {
+  color: white;
+  padding-top: 32px;
+  padding-left: 32px;
+  font-size: 14px;
+  letter-spacing: -1px;
+}
+
+.header__block-container {
+  display: flex;
+  color: white;
+  padding: 32px;
+}
+
+.header__block-container img {
+  height: 12vw;
+  width: 12vw;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 1);
+  margin-right: 20px;
+}

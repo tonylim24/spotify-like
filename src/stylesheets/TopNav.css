@@ -1,0 +1,25 @@
+.topNav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.topNav__right {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(18, 18, 18, 0.4);
+  padding: 5px;
+  border-radius: 23px;
+  max-height: 32px;
+  min-width: 32px;
+  cursor: pointer;
+}
+
+.topNav__right > h4 {
+  color: white;
+  font-size: 14px;
+  margin-left: 5px;
+}
